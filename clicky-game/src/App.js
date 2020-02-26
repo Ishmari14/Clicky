@@ -23,17 +23,17 @@ class App extends Component {
 
   scoreHandle = id => {
     this.state.characters.forEach(element => {
-      if (id === element.id && element.clicked == false) {
-        element.clicked = true;
+      if (id === element.id && element.Clicked === false) {
+        element.Clicked = true;
         this.setState({ Clicked: false });
-        this.incrementHandle();
-      } else if (id === element.id && element.clicked === true) {
+        this.handleIncrement();
+      } else if (id === element.id && element.Clicked === true) {
         if (this.state.currentScore > this.state.highScore) {
           this.setState({ highScore: this.state.currentScore });
         }
         this.setState({ currentScore: 0 });
         this.setState({ Clicked: true });
-        this.state.characters.forEach(element => (element.clicked = false));
+        this.state.characters.forEach(element => (element.Clicked = false));
         console.log(this.state.characters);
       }
     });
@@ -47,7 +47,7 @@ class App extends Component {
     this.setState({ shuffleArry });
   };
 
-  incrementHandle = () => {
+  handleIncrement = () => {
     this.setState({ currentScore: this.state.currentScore + 1 });
 
   };
@@ -55,7 +55,7 @@ class App extends Component {
   ///taking array parameters and shuffle///
 
   shuffle = array => {
-    var currentIndx = array.lenght,
+    var currentIndx = array.length,
       temporaryVal,
       randomIndx;
 
