@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CharaCard from "./CharaCard";
 import Wrapper from "./Wrapper";
-import Navbar from "./Wrapper";
+import Navbar from "./Navbar";
 import Jumbotron from "./Jumbotron";
 import characters from "./characters.json";
 import "./App.css";
